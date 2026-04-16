@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simone Oliveira Estética Avançada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+                max-width: 1280px;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #fce7f3;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-section img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #ec4899;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #4b5563;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            animation: float-pulse 2s ease-in-out infinite;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+        }
+
+        @keyframes float-pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom right, #fdf2f8, #ffffff, #fce7f3);
+            text-align: center;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            background-color: #fce7f3;
+            color: #be185d;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero h2 {
+                font-size: 3rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .btn {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        /* Divider */
+        .divider {
+            height: 4px;
+            background: linear-gradient(to right, transparent, #25d366, transparent);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 4rem 0;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: bold;
+            text-align: center;
+            color: #111827;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 4rem 0;
+            background-color: #fdf2f8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .service-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .service-item:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 4rem 0;
+            background-color: #ffffff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #fdf2f8;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background-color: #fbcfe8;
+        }
+
+        .benefit-icon {
+            width: 3rem;
+            height: 3rem;
+            margin: 0 auto 1rem;
+            color: #25d366;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 4rem 0;
+            background-color: #fdf2f8;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .review-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .review-item:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .review-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(to right, #25d366, #20ba5a);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: #25d366;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            animation: float-pulse 2s ease-in-out infinite;
+        }
+
+        .btn-cta:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .map-container {
+            background-color: #1f2937;
+            border-radius: 0.5rem;
+            height: 16rem;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer-info h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .info-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #25d366;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .info-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #25d366;
+        }
+
+        .btn-directions {
+            width: 100%;
+            background-color: #60a5fa;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-directions:hover {
+            background-color: #3b82f6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        /* WhatsApp Float Button */
+        .wa-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 99999;
+            animation: float-wa 3s ease-in-out infinite;
+            text-decoration: none;
+        }
+
+        .wa-float:hover {
+            background: #20ba5a;
+        }
+
+        @keyframes float-wa {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        /* Demo Banner */
+        .demo-banner {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .demo-banner-inner {
+            background: #ef4444;
+            color: #fff;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 8px 0 0 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja_3dpd3YdbYpuKKaTFVcb6lrXlOGQghq0JLG0BhUk0JlZNZ5KAxunwHWpnK9kPfgaosidxTYe6H5LhfK4gdYQSkWWpwEohm09o-4tF9Z8Gu1Qq1sFkxGWGPK-bNWIy_ZV7t2CdYaUJlW0riZOHKIvI-iy42n3puqHEPczORDn3DeRBWFJDoPKAGq7-VY/s3344/logo.png" alt="Simone Oliveira Estética">
+                    <div class="logo-text">
+                        <h1>Simone Oliveira</h1>
+                        <p>Estética Avançada</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/5511987516074?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-whatsapp">
+                    Atendimento WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="rating-badge">
+                ⭐ 4,9 ⭐⭐⭐⭐⭐ (32 avaliações)
+            </div>
+            <h2>Sua Beleza é Nossa Prioridade</h2>
+            <p>Há mais de 13 anos no mercado da saúde e beleza estética, cuidando com responsabilidade da saúde, bem-estar e autoestima dos nossos clientes.</p>
+            <p>Oferecemos os melhores tratamentos de estética avançada com profissionais qualificados e equipamentos de ponta.</p>
+            <a href="https://wa.me/5511987516074?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-whatsapp">
+                Agende Seu Atendimento
+            </a>
+        </div>
+    </section>
+
+    <!-- Divider 1 -->
+    <div class="divider"></div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h3 class="section-title">Nosso Espaço</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwKcAxkXtCbsrW6-2SpvtbMx3RYVg9hpb75jDDjU68qfWjK9nzbGfuw6ET44PZSos8wrnUWUDelw_sSiRLfp0wV0sdgrvfmTXTNTN7-ck-ZlBUTPkA3G1Yvd08_Z-Y-DPl5tKh_ayV3v2-QVhq-U28ZXcH1Y2bStgcxBXOU9e3Lmhcd5As4zpRo8eNPc0/s457/1.png" alt="Nosso Espaço 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCImVJTlIU9MDkkU0uOCpYHlz0vA_A9WAjiUG4u51mXwtrr47YVxqlbffTJLmkV4A6y91z81NbNN7nF80yj0A7Nn6Lfh2t1JEHMN9pNrvaI9WvDSnl1Ju-FaI_xk7dMfaKFJJiBelLgtdbReW890gu2HUy0VV7FKuBmiNrHM-AcBXt-xV2DB2SGvlxjeQ/s360/2.png" alt="Nosso Espaço 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgK0hZi1rslRZkZmPQG7eYI6-8Qabq8VIHmStvMvZp44K32Tz-wW5LbG8I_eZZxvNJi-N2KBt81tREjX5znhLl9JU1c4kPe56JEhLFQjUfuPBok6JFcyObCnrAIcaa2c52zykXzgvl3WB77qNV4T3B5v9ZXJOH3eOgmwbj0cvBKfN4Gbbi-YXg6vd389HA/s358/3.png" alt="Nosso Espaço 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider 2 -->
+    <div class="divider"></div>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h3 class="section-title">Nossos Serviços</h3>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOc4GRxC8LtTA3lMx8ihew19unV7MVG9v7oiAyr_Mk8jKw1BtR3dg-h7pzZBTSynm1Z3vlKjE6Ayp6Fs0ZVygNuwDNTi9aqCvFCzXsHx2QJ25FDripX3cOFTPSVR4kzxD1KgIVWM3pYREeTfuJy7gWxBYA_gihROjTiouE8o6VzWFglthBxd8FMv9vLgs/s396/1.png" alt="Serviço 1">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKNxvDJoIbgzCYB4RleQqcP8w7b1cUq-mSD-rB2pEqs_mCLF8uI7fmxPjNMfK9C0DIDYpg_7gmAYrJKYc6e9N5Alb3h6vtsl9zGlh5GMETVwBj28f-POLiTT6J1JIRIMPjq5CT6mVaAuSeb66XqWfxDkXT2HKfCkgkIMIHAdfSBqIZhisDkd8nIMq1xeg/s399/2.png" alt="Serviço 2">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrqx60NXJWriqV9_kchsPb3GUotCjMRaHSkUWkDebzFbx4N1p4s900q3Qk9qBW139zw3ZxYcOv3JZq-ULGqMAl_3xEyJlRWCnHNwJLJSyVR3M22njUPspgH8u4_LuoW-YmUkGwy77wY84K8BxvL7SUtbKQ2KwUJCGGS0SPuRA0OLPQNgycju3lmvJnZUY/s398/3.png" alt="Serviço 3">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEnuQsbc9_XAL_AgQA8HF5vlmXNeSxrr9ITi1GEJwRfKDNsNzLxQwnnPR7RkdA7xzTXO35gQjFZRPgKk4QXkUhsnIKHDcwDbMN2y9p3OI7vhhNQ6BX1uqImN93gmojWDZxVyEky30XJHeDpg5FZbGOk4sZWZ5XKQ0U4taV-dZuaGDb1q4t22P-46XE9p4/s398/4.png" alt="Serviço 4">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir8WueCxWxrpaBIk46m4teP-RnXt6LYWPdACGEDaXc02rEIGi0cUjCrCUqCEyr1cRK86E_DWPk2IEC33gMLpcgWLEgqouB7oeAs01QAMLz7GmYxSSIeFO9ovyQn5rYM_-ab-RCQHKiIyj-XqW-QyhzmGvjCa2w2E5ajLafm7a_WsoWAlVuwZCul-wpqfg/s398/5.png" alt="Serviço 5">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnAudw8i6M4lTczBFiTbPr12TFXbw9ZBFHf2kGEK335Dpk4EtUg9O72Hw0NGW0hPcCED0P6yehTnNm-EN6l30XHQHJJ8Hu0XtXtvjJcJYkawe-VAv8sDtM_Zw4da0qiGUbL_JFZmCq-N5M0_9RFeaiQlkyR1cB9jD7LRoyFy4ckg7tQetXmsOLrghxduQ/s396/6.png" alt="Serviço 6">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAAMkgWEljHyrzQ06n7qJ3s1XZE6ZfkgQWIqCDHZGE3qvqgZAG2USsH4s-ZoWlcZUcZ9adQNxeOxGAPg-7TjVpecOVHFqFnRpL75v8FfFDpObKLX3Ts9Ja_0QMamfnExIp80NxOL4Sd-fmkU5lxBjkmtxuH4oG6dAYrJZu4Zl__flo51_qB66fFIMAjhw/s396/7.png" alt="Serviço 7">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFpXOCUpRgSBYsJ90rTHbC79Hs9imj5UG9tC1t6v5Y1GZA5AONUoTIyvGIyEwTrQnrTnTjlFQHleTa_jYNmmKYNGnQVHzv6L26FT8i6rZNwrnW_00OouqldM6UqoP7bqPRlkMTtYpBoFCRkSQ8YVEGjDNWXK8ZQapYmDcEqItlSAilF1aFcdwQjzIon3k/s396/9.png" alt="Serviço 8">
+                </div>
+                <div class="service-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiAO-fqLmP7kgGB1o0bcOqm34AJVjuHqgVkYGq2DkpAeLQZCzzkC2Ub4e6MtcpBihQE5yYdfrzM70byZnjvM9j1RGoQZb3PqSbFcD5lR3sDewSq1OjqXZTwq49ICdlVnf1bKiA_FHD6-uchtJcDfYU1WpvGlCpAlXwVTwheZnAK77HQT1WQeqTz0QmnNI/s394/8.png" alt="Serviço 9">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider 3 -->
+    <div class="divider"></div>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h3 class="section-title">Por Que Escolher A Gente?</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <h4>Cuidado Personalizado</h4>
+                    <p>Cada cliente recebe atenção especial e tratamentos adaptados às suas necessidades.</p>
+                </div>
+                <div class="benefit-card">
+                    <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <path d="M12 1v6m0 6v6"></path>
+                        <path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+                        <path d="M1 12h6m6 0h6"></path>
+                        <path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                    </svg>
+                    <h4>Tecnologia Avançada</h4>
+                    <p>Equipamentos modernos e técnicas inovadoras para melhores resultados.</p>
+                </div>
+                <div class="benefit-card">
+                    <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <h4>Segurança e Higiene</h4>
+                    <p>Padrões rigorosos de higiene e esterilização em todos os procedimentos.</p>
+                </div>
+                <div class="benefit-card">
+                    <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                    </svg>
+                    <h4>13 Anos de Experiência</h4>
+                    <p>Mais de uma década cuidando da saúde, bem-estar e autoestima dos clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider 4 -->
+    <div class="divider"></div>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h3 class="section-title">Avaliações de Clientes</h3>
+            <div class="reviews-grid">
+                <div class="review-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEIY7l4n__mKY_5-G2FxBufxxoQGganTq8bpaq5crO2yaAIMhU8HX9_LtX9NLJTTASAnNltO-fUl1xSchkVdeafG_UcgYc4PBg9RLX0qa6JQs0Eb_q7zZt-GYBzwi7Q6aAJ9x8k0rEf0aDczxCQ_2jZjEyDAuRNnBAIxaT2kzEtFbE2xaVGAhZm28C6iY/s313/1.png" alt="Avaliação 1">
+                </div>
+                <div class="review-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibdqu3tZKIv6spKHFR1VyF5hAkzTcXHLlfUKI76nWr8f0z91TNhVeyOEdlucdXjmioRSWbbSNffUHfHKI-O1KW89NkC5dWw7GCly8QsNSkRsR1PrypNHRwsu59HCVBJw2d-g8-pE_Nl8gXJ80Ve5Om0vyaNczImHU_FFsj2pDeHCddpD6e_Ug64cLPxxo/s328/2.png" alt="Avaliação 2">
+                </div>
+                <div class="review-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfxkoMpHkEOzpkmegq7r1FDCuWpYgBOhyFfBm8c-ynBR5SVnLBu_BKJZczz3jDi5qwEYgJ4IFzDQvji8HpRB0ES8NJF1ndVRpsP3Xcfndpc2hsmzFwPtEwWXuqQ05WJZ77sK5EVquMrL9euue_ij9-HyD8seKYOlGdeDfFb2BCGxsglJa0P8buVklOyQI/s316/3.png" alt="Avaliação 3">
+                </div>
+                <div class="review-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhN-mHQzAf6BYiJmPwcPVQtUpW4X77rprwmAcazoleHf1lu54ghwgkEMyMwHfZJDUCSK7VTFQIHL-2BMUJMXV483hogC_ZxA44dEW5OUooYad5FYk7CmjxKDdDwG9GOf4hOZJucMjCST0usomx4hXcWP8fcj2R6KRREml8FWXatMXR8KMBvPX-ZtuzV0mY/s332/4.png" alt="Avaliação 4">
+                </div>
+                <div class="review-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXu6f7s1XNOpq1crXrPFmQLI1SlijDksO2wRPocjWW7NYsAClCdISiB9a16XUa-_8WM2D-IpcAoxqQ0z3rc9gPwNEpugc93BWgG1lDRDXUQQQWB8jJ1Qo-zNS4_ACmAwbuZNdrhas8e37iPIWrFw_B83_h3AOilOBMkOnRVo2i7s_DE-jDUJVso_Ap8Ik/s332/5.png" alt="Avaliação 5">
+                </div>
+                <div class="review-item">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwOVOgpDLuf_ddCZt6lYmfLmHP8U2KCkqBLVfog11_PbhX2VBJkUvoV7ol-Fdzds9Tw3H4QU4F7rfr_gUvDAuYwFYF021EMovGBPA3B86qpjaTjLaanC9Wzm6jeltK1Ao8xf2zJQJSLt0A8fDE8v4XCJfhCvdxQYoC-zoW7_QH7wmHKqisScMURh9oE-E/s312/6.png" alt="Avaliação 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider 5 -->
+    <div class="divider"></div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>Pronto para Transformar Sua Beleza?</h3>
+            <p>Entre em contato conosco e agende seu atendimento. Nossa equipe está pronta para atendê-lo!</p>
+            <a href="https://wa.me/5511987516074?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="btn btn-cta">
+                Agende Agora via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Map -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.0667089234566!2d-46.51234!3d-23.47456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef7e8f8f8f8f9%3A0x0!2sAv.%20Imirim%2C%204446%20-%20Vila%20Nova%20Cachoeirinha%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002464-700!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <!-- Info -->
+                <div class="footer-info">
+                    <h4>Informações de Contato</h4>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Sobreloja, Av. Imirim, 4446 - Vila Nova Cachoeirinha, São Paulo - SP, 02464-700</span>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <a href="https://wa.me/5511987516074?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." target="_blank">(11) 98751-6074 - WhatsApp</a>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Seg-Sex: 9h-18h | Sáb: 9h-14h</span>
+                    </div>
+                    <button class="btn-directions" onclick="window.open('https://www.google.com/maps/search/Av.+Imirim,+4446+-+Vila+Nova+Cachoeirinha,+São+Paulo', '_blank')">
+                        🚗 Dirigir até lá
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Simone Oliveira Estética Avançada. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511987516074?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento." target="_blank" class="wa-float" aria-label="WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        <div class="demo-banner-inner">Versão Demonstração</div>
+    </div>
+</body>
+</html>
